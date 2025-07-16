@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
-import { useState } from 'react';
-import {Tabs} from './components/Tabs/Tabs'
+import { Tabs } from './components/Tabs/Tabs';
 
 export const tabs = [
   { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
@@ -12,12 +11,11 @@ export const tabs = [
 ];
 
 export const App = () => {
-    const [activeTabId, setActiveTabId] = useState (tabs[0].id);
+  const [activeTabId, setActiveTabId] = useState(tabs[0].id);
 
-    return (
-      <div className="section">
-        <Tabs pagina={tabs} idAtivo={activeTabId} setIdAtivo={setActiveTabId}/>
-      </div>
-    )
-
+  return (
+    <div className="section">
+      <Tabs tabs={tabs} activeTabId={activeTabId} setActiveTabId={setActiveTabId} />
+    </div>
+  );
 };

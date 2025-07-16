@@ -5,7 +5,7 @@ export const Tabs = ({ pagina, idAtivo, setIdAtivo }) => {
             <h1 className="title">Selected tab is {pagina.find(pag => pag.id === idAtivo)?.title}</h1>
             <div className="tabs is-boxed">
                 <ul>
-                    {pagina.map((pag, index) => (
+                    {pagina.map((pag) => (
                         <li
                             onClick={(e) => {e.preventDefault(); setIdAtivo(pag.id)}}
                             className={pag.id === idAtivo ? 'is-active' : ''}
